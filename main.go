@@ -2,7 +2,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"strings"
 	"log"
 )
 func sayhelloName(w http.ResponseWriter, r *http.Request) {
@@ -11,11 +10,8 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("path", r.URL.Path)
 	fmt.Println("scheme", r.URL.Scheme)
 	fmt.Println(r.Form["url_long"])
-	for k, v := range r.Form {
-		fmt.Println("key:", k)
-		fmt.Println("val:", strings.Join(v, ""))
-	}
-	fmt.Fprintf(w, "heheda Wrold!") //这个写入到w的是输出到客户端的
+
+	fmt.Fprintf(w, "sssss Wrold!") //这个写入到w的是输出到客户端的
 }
 func main() {
 	http.HandleFunc("/", sayhelloName) //设置访问的路由
