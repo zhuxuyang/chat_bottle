@@ -11,7 +11,7 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("scheme", r.URL.Scheme)
 	fmt.Println(r.Form["url_long"])
 
-	fmt.Fprintf(w, "sssss Wrold!") //这个写入到w的是输出到客户端的
+	fmt.Fprintf(w, "自动部署 Wrold!") //这个写入到w的是输出到客户端的
 }
 func main() {
 	http.HandleFunc("/", sayhelloName) //设置访问的路由
